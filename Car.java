@@ -29,7 +29,12 @@ public abstract class Car implements Movable{
     }
 
     public void setCurrentSpeed(double amount){
-        this.currentSpeed = amount;
+        if(0 <= currentSpeed && currentSpeed + amount <= enginePower){
+            this.currentSpeed = amount;
+        } else {
+            throw new IllegalArgumentException("Values have to be in interval [0, EnginePower]");
+        }
+
     }
 
     public String getName(){
@@ -68,12 +73,23 @@ public abstract class Car implements Movable{
 
     // TODO fix this method according to lab pm
     public void gas(double amount){
-        incrementSpeed(amount);
+        if(0 <= amount && amount <= 1){
+            incrementSpeed(amount);
+        } else {
+            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+        }
+
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
-        decrementSpeed(amount);
+        if(0 <= amount && amount <= 1){
+            decrementSpeed(amount);
+        } else {
+            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+        }
+
+
     }
 
     public void setDirection(int direction){
