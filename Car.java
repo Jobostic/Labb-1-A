@@ -2,31 +2,40 @@ import java.awt.*;
 
 public abstract class Car implements Movable{
 
-    public int nrDoors; // Number of doors on the car
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
-    public Color color; // Color of the car
-    public String modelName; // The car model name
-    public double speedFactor; // Speedfactor depending on turbo and trimfactor.
-    public double posX; // Every Cars position in x-direction
-    public double posY; // Every Cars position in y-direction
-    public int direction = getDirection(); // Every Cars direction
-    public static final int NORTH = 0;
-    public static final int EAST = 1;
-    public static final int SOUTH = 2;
-    public static final int WEST = 3;
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
+    private double speedFactor; // Speedfactor depending on turbo and trimfactor.
+    private double posX; // Every Cars position in x-direction
+    private double posY; // Every Cars position in y-direction
+    private int direction; // Every Cars direction
+    private static final int NORTH = 0;
+    private static final int EAST = 1;
+    private static final int SOUTH = 2;
+    private static final int WEST = 3;
 
     public Car(int nrDoors, Color color, double enginePower, String modelName){
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
         this.modelName = modelName;
-        stopEngine();
+        this.direction = NORTH;
     }
 
     public int getNrDoors(){
         return nrDoors;
     }
+
+    public void setCurrentSpeed(double amount){
+        this.currentSpeed = amount;
+    }
+
+    public String getName(){
+        return modelName;
+    }
+
     public double getEnginePower(){
         return enginePower;
     }
@@ -73,6 +82,14 @@ public abstract class Car implements Movable{
 
     public int getDirection(){
         return direction;
+    }
+
+    public double getX(){
+        return posX;
+    }
+
+    public double getY(){
+        return posY;
     }
 
     @Override
