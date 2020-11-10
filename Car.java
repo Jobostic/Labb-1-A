@@ -29,11 +29,8 @@ public abstract class Car implements Movable{
     }
 
     public void setCurrentSpeed(double amount){
-        if(0 <= currentSpeed && currentSpeed + amount <= enginePower){
-            this.currentSpeed = amount;
-        } else {
-            throw new IllegalArgumentException("Values have to be in interval [0, EnginePower]");
-        }
+        this.currentSpeed = amount;
+
 
     }
 
@@ -67,9 +64,13 @@ public abstract class Car implements Movable{
 
     public abstract double speedFactor();
 
-    public abstract void incrementSpeed(double amount);
+    public void incrementSpeed(double amount){
+        setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount,getEnginePower()));
+    }
 
-    public abstract void decrementSpeed(double amount);
+    public void decrementSpeed(double amount){
+        setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount,0));
+    }
 
     // TODO fix this method according to lab pm
     public void gas(double amount){

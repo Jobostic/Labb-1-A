@@ -4,7 +4,7 @@ public class Saab95 extends Car{
 
     private boolean turboOn;
     
-    public Saab95( Color color, int enginePower, String modelName){
+    public Saab95( Color color, int enginePower){
         super(2, color, enginePower, "Saab95");
 	    turboOn = false;
     }
@@ -25,13 +25,5 @@ public class Saab95 extends Car{
         return speedFactor;
     }
 
-    @Override
-    public void incrementSpeed(double amount){
-        setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
-    }
 
-    @Override
-    public void decrementSpeed(double amount){
-        setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
-    }
 }
