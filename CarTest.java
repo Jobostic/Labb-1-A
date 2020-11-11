@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
 
-    private Object IllegalArgumentException;
 
     @Test
     void getNrDoors() {
@@ -51,24 +50,37 @@ class CarTest {
 
     @Test
     void speedFactor() {
+        Saab95 sab = new Saab95(Color.red, 100);
+        sab.setTurboOn();
+        assertEquals(1.3, sab.speedFactor());
     }
 
     @Test
     void incrementSpeed() {
-        Volvo240 vol = new Volvo240(Color.black, 100);
 
     }
 
     @Test
     void decrementSpeed() {
+
     }
 
     @Test
     void gas() {
+        Volvo240 vol = new Volvo240(Color.black, 100);
+        vol.startEngine();
+        vol.gas(0.5);
+        assertEquals(0.725, vol.getCurrentSpeed() );
+
     }
 
     @Test
     void brake() {
+        Saab95 sab = new Saab95(Color.red, 100);
+        sab.setTurboOn();
+        sab.startEngine();
+        sab.brake(1);
+        assertEquals(0, sab.getCurrentSpeed());
     }
 
     @Test

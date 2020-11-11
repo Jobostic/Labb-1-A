@@ -28,10 +28,12 @@ public abstract class Car implements Movable{
         return nrDoors;
     }
 
-    public void setCurrentSpeed(double amount){
+    private void setCurrentSpeed(double amount){
         this.currentSpeed = amount;
+    }
 
-
+    public double getCurrentSpeed(){
+        return currentSpeed;
     }
 
     public String getName(){
@@ -40,10 +42,6 @@ public abstract class Car implements Movable{
 
     public double getEnginePower(){
         return enginePower;
-    }
-
-    public double getCurrentSpeed(){
-        return currentSpeed;
     }
 
     public Color getColor(){
@@ -64,31 +62,39 @@ public abstract class Car implements Movable{
 
     public abstract double speedFactor();
 
-    public void incrementSpeed(double amount){
+    private void incrementSpeed(double amount){
         setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount,getEnginePower()));
     }
 
-    public void decrementSpeed(double amount){
+    private void decrementSpeed(double amount){
         setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount,0));
     }
 
-    // TODO fix this method according to lab pm
-    public void gas(double amount){
-        if(0 <= amount && amount <= 1){
-            incrementSpeed(amount);
+    public void gas(double amount) {
+        if(getCurrentSpeed() > 0){
+            if(0 <= amount && amount <= 1){
+                incrementSpeed(amount);
+            } else {
+                throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            }
         } else {
-            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            throw new IllegalArgumentException("Start engine first");
         }
+
 
     }
 
-    // TODO fix this method according to lab pm
     public void brake(double amount){
-        if(0 <= amount && amount <= 1){
-            decrementSpeed(amount);
+        if(getCurrentSpeed() > 0){
+            if(0 <= amount && amount <= 1){
+                decrementSpeed(amount);
+            } else {
+                throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            }
         } else {
-            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            throw new IllegalArgumentException("The car is not moving");
         }
+
 
 
     }
@@ -109,7 +115,7 @@ public abstract class Car implements Movable{
         return posY;
     }
 
-    @Override
+
     public void move(){
         if(direction == NORTH){
             posY = posY + getCurrentSpeed();
@@ -125,7 +131,7 @@ public abstract class Car implements Movable{
         }
     }
 
-    @Override
+
     public void turnLeft(){
         if(direction == NORTH){
             setDirection(WEST);
@@ -141,7 +147,7 @@ public abstract class Car implements Movable{
         }
     }
 
-    @Override
+
     public void turnRight(){
         if(direction == NORTH){
             setDirection(EAST);
