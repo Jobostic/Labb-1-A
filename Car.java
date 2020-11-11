@@ -140,13 +140,16 @@ public abstract class Car implements Movable{
      * If the argument lies outside the interval, an exception will be thrown.
      * @param amount The argument you send to incrementSpeed()
      */
-    public void gas(double amount){
-        if(0 <= amount && amount <= 1){
-            incrementSpeed(amount);
+    public void gas(double amount) {
+        if (getCurrentSpeed() > 0) {
+            if (0 <= amount && amount <= 1) {
+                incrementSpeed(amount);
+            } else {
+                throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            }
         } else {
-            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+            throw new IllegalArgumentException("Start engine first");
         }
-
     }
 
     /**
@@ -156,13 +159,17 @@ public abstract class Car implements Movable{
      * If the argument lies outside the interval, an exception will be thrown.
      * @param amount The argument you send to decrementSpeed()
      */
-    public void brake(double amount) {
-        if (0 <= amount && amount <= 1) {
-            decrementSpeed(amount);
-        } else {
-            throw new IllegalArgumentException("Values have to be in interval [0,1]");
+    public void brake(double amount){
+            if (getCurrentSpeed() > 0) {
+                if (0 <= amount && amount <= 1) {
+                    decrementSpeed(amount);
+                } else {
+                    throw new IllegalArgumentException("Values have to be in interval [0,1]");
+                }
+            } else {
+                throw new IllegalArgumentException("The car is not moving");
+            }
         }
-    }
 
     /**
      * Method to set the car's direction before driving it.
@@ -217,7 +224,6 @@ public abstract class Car implements Movable{
      * Implemented from the interface Movable.
      * The position variables posX and posY increases/decreases depending on what direction the car faces and what the current speed of the car is att that moment.
      */
-    @Override
     public void move(){
         if(getDirection() == NORTH){
             posY = posY + getCurrentSpeed();
@@ -237,7 +243,6 @@ public abstract class Car implements Movable{
      * Method to change the car's direction 90° to the left.
      * Implemented from the interface Movable.
      */
-    @Override
     public void turnLeft(){
         if(getDirection() == NORTH){
             setDirection(WEST);
@@ -257,7 +262,6 @@ public abstract class Car implements Movable{
      * Method to change the car's direction 90° to the right.
      * Implemented from the interface Movable.
      */
-    @Override
     public void turnRight(){
         if(getDirection() == NORTH){
             setDirection(EAST);
