@@ -19,7 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8ad0443-48cd-4972-9841-3686951bf505" name="Default Changelist" comment="update123" />
+    <list default="true" id="c8ad0443-48cd-4972-9841-3686951bf505" name="Default Changelist" comment="update123">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_11_2020_3_41_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_11_2020_3_41_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Saab95.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Volvo240.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WheelerTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WheelerTruck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/garage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +85,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CarTest">
+  <component name="RunManager" selected="Application.WheelerTruck">
+    <configuration name="WheelerTruck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WheelerTruck" />
+      <module name="Labb-1-A" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -114,8 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CarTest" />
+        <item itemvalue="Application.WheelerTruck" />
         <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.CarTest" />
         <item itemvalue="JUnit.CarTest.getNrDoors" />
         <item itemvalue="JUnit.CarTest.setCurrentSpeed" />
       </list>
@@ -165,34 +185,59 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1605003295453" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1605604664384">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser" timestamp="1605636934259">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1605604664384" />
+    <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1605636934259" />
     <state x="424" y="206" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605003078446">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="424" y="206" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1605003078446" />
+    <state x="549" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605635563426">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="549" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1605635563426" />
     <state x="421" y="50" key="FileChooserDialogImpl" timestamp="1605598569984">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="50" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605598569984" />
-    <state width="614" height="161" key="GridCell.Tab.0.bottom" timestamp="1605604090249">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1605641471367">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="614" height="161" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605604090249" />
-    <state width="614" height="161" key="GridCell.Tab.0.center" timestamp="1605604090249">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605641471367" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1605641471367">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="614" height="161" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605604090249" />
-    <state width="614" height="161" key="GridCell.Tab.0.left" timestamp="1605604090248">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1605641471367" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1605641471367">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="614" height="161" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605604090248" />
-    <state width="614" height="161" key="GridCell.Tab.0.right" timestamp="1605604090249">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1605641471367" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1605641471367">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="614" height="161" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605604090249" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1605641471367" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1605639949730">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605639949730" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1605639949730">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1605639949730" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1605639949730">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1605639949730" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1605639949730">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1605639949730" />
     <state x="315" y="45" key="NewModule_or_Project.wizard" timestamp="1605598606902">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

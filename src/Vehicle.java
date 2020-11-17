@@ -9,10 +9,10 @@ public class Vehicle implements Movable {
     private double posX; // Every Cars position in x-direction
     private double posY; // Every Cars position in y-direction
     private int direction; // Every Cars direction
-    private static final int NORTH = 0;
-    private static final int EAST = 1;
-    private static final int SOUTH = 2;
-    private static final int WEST = 3;
+    public static final int NORTH = 0; // Dessa kan väl vara public?
+    public static final int EAST = 1;
+    public static final int SOUTH = 2;
+    public static final int WEST = 3;
     private double weight; //in ton
 
     /**
@@ -59,7 +59,7 @@ public class Vehicle implements Movable {
      * @param amount Decides what the speed will be set to.
      */
 
-    private void setCurrentSpeed(double amount){
+    public void setCurrentSpeed(double amount){
         this.currentSpeed = amount;
     }
 
@@ -236,19 +236,25 @@ public class Vehicle implements Movable {
      * Implemented from the interface Movable.
      * The position variables posX and posY increases/decreases depending on what direction the car faces and what the current speed of the car is att that moment.
      */
+
     public void move(){
-        if(getDirection() == NORTH){
-            posY = posY + getCurrentSpeed();
+        if(getCurrentSpeed() > 0){
+            if(getDirection() == NORTH){
+                posY = posY + getCurrentSpeed();
+            }
+            else if(getDirection() == EAST){
+                posX = posX + getCurrentSpeed();
+            }
+            else if(getDirection() == SOUTH){
+                posY = posY - getCurrentSpeed();
+            }
+            else if(getDirection() == WEST){
+                posX = posX - getCurrentSpeed();
+            }
+        } else {
+            throw new IllegalArgumentException("Turn on engine");
         }
-        else if(getDirection() == EAST){
-            posX = posX + getCurrentSpeed();
-        }
-        else if(getDirection() == SOUTH){
-            posY = posY - getCurrentSpeed();
-        }
-        else if(getDirection() == WEST){
-            posX = posX - getCurrentSpeed();
-        }
+
     }
 
     /**
