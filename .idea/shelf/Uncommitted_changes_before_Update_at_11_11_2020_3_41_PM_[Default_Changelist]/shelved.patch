@@ -1,0 +1,33 @@
+Index: Volvo240Test.java
+===================================================================
+--- Volvo240Test.java	(revision 7486000a6c2ff3ca8245e27c7220f28b4692853c)
++++ Volvo240Test.java	(revision 7486000a6c2ff3ca8245e27c7220f28b4692853c)
+@@ -1,11 +0,0 @@
+-import org.junit.jupiter.api.Test;
+-
+-import static org.junit.jupiter.api.Assertions.*;
+-
+-class Volvo240Test {
+-    @Test
+-    void speedFactor(){
+-
+-    }
+-
+-}
+\ No newline at end of file
+Index: Saab95Test.java
+===================================================================
+--- Saab95Test.java	(revision 7486000a6c2ff3ca8245e27c7220f28b4692853c)
++++ Saab95Test.java	(revision 7486000a6c2ff3ca8245e27c7220f28b4692853c)
+@@ -1,10 +0,0 @@
+-import org.junit.jupiter.api.Test;
+-
+-import static org.junit.jupiter.api.Assertions.*;
+-
+-class Saab95Test {
+-
+-    @Test
+-    void speedFactor() {
+-    }
+-}
+\ No newline at end of file

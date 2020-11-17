@@ -1,11 +1,6 @@
 import java.awt.*;
 
-/**
- * An abstract class used to gather common attributes of classes Volvo240 and Saab95.
- * Also implements interface Movable which allows the cars you create to move and turn.
- */
-public abstract class Car implements Movable{
-
+public class Vehicle implements Movable {
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
@@ -18,6 +13,7 @@ public abstract class Car implements Movable{
     private static final int EAST = 1;
     private static final int SOUTH = 2;
     private static final int WEST = 3;
+    private double weight; //in ton
 
     /**
      * Constructor of Car. Takes all important variables that are common to both Saab95 and Volvo240
@@ -26,7 +22,7 @@ public abstract class Car implements Movable{
      * @param enginePower How powerful the engine is!
      * @param modelName Is it Volvo or is it SAAB?
      */
-    public Car(int nrDoors, Color color, double enginePower, String modelName){
+    public Vehicle(int nrDoors, Color color, double enginePower, String modelName, double weight){
         this.nrDoors = nrDoors;
         this.color = color;
         this.enginePower = enginePower;
@@ -34,7 +30,12 @@ public abstract class Car implements Movable{
         this.direction = NORTH;
         this.posX = 0;
         this.posY = 0;
+        this.weight = weight;
         stopEngine();
+    }
+
+    public Vehicle() {
+
     }
 
     /**
@@ -79,6 +80,15 @@ public abstract class Car implements Movable{
 
 
     /**
+     * Getter for weight
+     * @return
+     */
+    public double getWeight(){
+        return weight;
+    }
+
+
+    /**
      * Getter for color
      * @return
      */
@@ -90,9 +100,9 @@ public abstract class Car implements Movable{
      * Setter for color
      * @param clr
      */
-     public void setColor(Color clr){
-     color = clr;
-     }
+    public void setColor(Color clr){
+        color = clr;
+    }
 
     /**
      * When engine is started, the Car starts moving slowly.
@@ -113,7 +123,9 @@ public abstract class Car implements Movable{
      * Speed factor is an attribute of both Saab95 and Volvo240 but it is calculated differently.
      * @return
      */
-    public abstract double speedFactor();
+    public double speedFactor(){
+        return getEnginePower() * 0.01;
+    };
 
     /**
      * Increases the current speed by the amount multiplied by the speed factor.
@@ -160,16 +172,16 @@ public abstract class Car implements Movable{
      * @param amount The argument you send to decrementSpeed()
      */
     public void brake(double amount){
-            if (getCurrentSpeed() > 0) {
-                if (0 <= amount && amount <= 1) {
-                    decrementSpeed(amount);
-                } else {
-                    throw new IllegalArgumentException("Values have to be in interval [0,1]");
-                }
+        if (getCurrentSpeed() > 0) {
+            if (0 <= amount && amount <= 1) {
+                decrementSpeed(amount);
             } else {
-                throw new IllegalArgumentException("The car is not moving");
+                throw new IllegalArgumentException("Values have to be in interval [0,1]");
             }
+        } else {
+            throw new IllegalArgumentException("The car is not moving");
         }
+    }
 
     /**
      * Method to set the car's direction before driving it.
@@ -207,14 +219,14 @@ public abstract class Car implements Movable{
      * Setter for x-coordinate
      * @param posX x-coordinate
      */
-    private void setX(int posX){
+    public void setX(double posX){
         this.posX = posX;
-    }
+    } //osäker om den ska vara public eller private
     /**
      * Setter for y-coordinate
      * @param posY y-coordinate
      */
-    private void setY(int posY){
+    public void setY(double posY){
         this.posY = posY;
     }
 
@@ -276,4 +288,5 @@ public abstract class Car implements Movable{
             setDirection(NORTH);
         }
     }
+
 }
