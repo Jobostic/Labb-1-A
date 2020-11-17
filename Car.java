@@ -28,10 +28,6 @@ public abstract class Car implements Movable{
         return nrDoors;
     }
 
-    private void setCurrentSpeed(double amount){
-        this.currentSpeed = amount;
-    }
-
     public double getCurrentSpeed(){
         return currentSpeed;
     }
@@ -63,11 +59,11 @@ public abstract class Car implements Movable{
     public abstract double speedFactor();
 
     private void incrementSpeed(double amount){
-        setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount,getEnginePower()));
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,getEnginePower());
     }
 
     private void decrementSpeed(double amount){
-        setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount,0));
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
     }
 
     public void gas(double amount) {
@@ -99,7 +95,7 @@ public abstract class Car implements Movable{
 
     }
 
-    public void setDirection(int direction){
+    private void setDirection(int direction){
         this.direction = direction;
     }
 
@@ -120,13 +116,13 @@ public abstract class Car implements Movable{
         if(direction == NORTH){
             posY = posY + getCurrentSpeed();
         }
-        if(direction == EAST){
+        else if(direction == EAST){
             posX = posX + getCurrentSpeed();
         }
-        if(direction == SOUTH){
+        else if(direction == SOUTH){
             posY = posY - getCurrentSpeed();
         }
-        if(direction == WEST){
+        else if(direction == WEST){
             posX = posX - getCurrentSpeed();
         }
     }
@@ -136,13 +132,13 @@ public abstract class Car implements Movable{
         if(direction == NORTH){
             setDirection(WEST);
         }
-        if(direction == EAST){
+        else if(direction == EAST){
             setDirection(NORTH);
         }
-        if(direction == SOUTH){
+        else if(direction == SOUTH){
             setDirection(EAST);
         }
-        if(direction == WEST){
+        else if(direction == WEST){
             setDirection(SOUTH);
         }
     }
@@ -152,13 +148,13 @@ public abstract class Car implements Movable{
         if(direction == NORTH){
             setDirection(EAST);
         }
-        if(direction == EAST){
+        else if(direction == EAST){
             setDirection(SOUTH);
         }
-        if(direction == SOUTH){
+        else if(direction == SOUTH){
             setDirection(WEST);
         }
-        if(direction == WEST){
+        else if(direction == WEST){
             setDirection(NORTH);
         }
     }
