@@ -1,40 +1,48 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class garage {
-
+public class garage<C extends Car> {
 
     private int maxStorage;
-    private List<Car> storage;    // Komposition, garaget "har" bilar
-    private String garageBrand;
+    public List<C> storage;
+
+    public garage() {
+
+    }
 
     public garage(int maxStorage) {
         this.maxStorage = maxStorage;
-        storage = new ArrayList<Car>();
-        garageBrand = "";
+        storage = new ArrayList<C>();
     }
 
-    public garage(int maxStorage, String garageBrand){
-        this.maxStorage = maxStorage;
-        this.garageBrand = garageBrand;
-        storage = new ArrayList<Car>();
-    }
-
-    public void receiveCar(Car car){
-        if(garageBrand == ""){
+    public void addCar(C car) {
+        if(storage.size() < maxStorage){
             storage.add(car);
-        } else if(garageBrand.equals(car.getName())){
-            storage.add(car);
+        } else {
+            throw new IllegalArgumentException("We are full.");
         }
+
+
     }
 
-<<<<<<< HEAD
-    public void getCar(Car car){
-
-=======
-    public Car getCar(Car car){//first in first out?
-        return car;
->>>>>>> 036682f5eb28dcaa59a873d02cf9bfb2596542da
+    public Car getCar (int index){
+            Car car = storage.get(index);
+            storage.remove(index);
+            return car;
     }
+
+    public static void main(String[] args){
+        garage<Car> gar = new garage<Car>(10);
+        Volvo240 vol = new Volvo240();
+        Saab95 sab = new Saab95();
+        gar.addCar(sab);
+        System.out.println(gar.getCar(0).getName());
+        gar.addCar(vol);
+        System.out.println(gar.getCar(0).getName());
+
+    }
+
+
+
 
 }

@@ -1,14 +1,14 @@
 import java.awt.*;
 import java.util.LinkedList;
 
-public class WheelerTruck extends Truck {
+public class WheelerTruck extends CarTransport {
     private boolean rampDown = false;
     private LinkedList<Car> storeCars;
-    private static final int maxStorage = 10;
 
 
-    public WheelerTruck(Color color, double enginePower, String modelName, double weight) {
-        super(2, color, enginePower, modelName, weight);
+
+    public WheelerTruck(Color color, double enginePower, String modelName, double weight, int maxStorage) {
+        super(2, color, enginePower, modelName, weight, maxStorage);
         storeCars = new LinkedList<Car>();
     }
 
@@ -67,13 +67,13 @@ public class WheelerTruck extends Truck {
     }
 
     public void loadCars(Car car){
-        if(rampDown && Math.abs(getX()-car.getX()) <= 1 && Math.abs(getY()-car.getY()) <= 1
-        && storeCars.size() <= maxStorage && car.getWeight() <= 3){
+        if(rampDown && measureDist(getX(),car.getX()) <= 1 && measureDist(getY(), car.getY()) <= 1
+        && storeCars.size() <= getMaxStorage() && car.getWeight() <= 3){
             storeCars.add(car);
             car.setX(getX());     //ändras bilens koordinater med biltransportens koordinater
             car.setY(getY());
         } else{
-            throw new IllegalArgumentException("something");
+            throw new IllegalArgumentException("");
         }
     }
 
@@ -90,7 +90,7 @@ public class WheelerTruck extends Truck {
     }
 
     public static void main(String[] args){
-        WheelerTruck truck1 = new WheelerTruck(Color.black, 100, "WheelerTruck", 5);
+        WheelerTruck truck1 = new WheelerTruck(Color.black, 100, "WheelerTruck", 5, 10);
         Volvo240 vol = new Volvo240();
         Saab95 sab = new Saab95();
         truck1.startEngine();
