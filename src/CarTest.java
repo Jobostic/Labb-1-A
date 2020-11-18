@@ -5,10 +5,51 @@ import org.junit.Before;
 
 public class CarTest {
 
-     public Volvo240 volvo = new Volvo240();
-     public Saab95 saab = new Saab95();
+     private Volvo240 volvo = new Volvo240();
+     private Saab95 saab = new Saab95();
+     private WheelerTruck truck1 = new WheelerTruck(Color.black, 100, "Wheeler", 5, 10);
+     private Scania scania = new Scania(Color.red, 100, "Scania", 5, 10);
+     private garage<Car> gar = new garage<Car>(10);
 
     private Object IllegalArgumentException;
+
+    @Test
+    public void TestAddCar(){
+        gar.addCar(volvo);
+        assertEquals(volvo, gar.getCar(0));
+    }
+
+    @Test
+    public void TestMove(){
+        truck1.startEngine();
+        truck1.move();
+        truck1.stopEngine();
+        truck1.SetRampDown();
+        truck1.loadCars(volvo);
+        truck1.loadCars(saab);
+        truck1.SetRampUp();
+        truck1.startEngine();
+        truck1.move();
+        truck1.turnLeft();
+        truck1.move();
+        truck1.move();
+        assertEquals(-0.2, saab.getX(),0);
+    }
+
+    @Test
+    public void TestLoadCars(){
+        truck1.SetRampDown();
+        truck1.loadCars(volvo);
+        truck1.loadCars(saab);
+        assertEquals(volvo, truck1.getCar(0));
+
+    }
+
+    @Test
+    public void TestLiftTruckBedScania(){
+        scania.LiftTruckBed(10);
+        assertEquals(10, scania.getTruckBed_pos(),0);
+    }
 
     @Test
     public void checkRightAmountOfDoors() {

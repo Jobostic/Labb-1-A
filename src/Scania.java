@@ -9,16 +9,31 @@ public class Scania extends CarTransport {
 
     }
 
+    /**
+     * Constructor: Calls the superclass car to create a vehicle.
+     * @param color
+     * @param enginePower
+     * @param modelName
+     * @param weight
+     * @param maxStorage
+     */
     public Scania(Color color, double enginePower, String modelName, double weight, int maxStorage){
         super(2, color, enginePower, modelName, weight, maxStorage );
         storage = new LinkedList<Object>();
     }
 
+    /**
+     * Gets the position of the truckbed in degrees.
+     * @return
+     */
     public double getTruckBed_pos(){
         return truckBed_pos;
     }
 
 
+    /**
+     *Starts the engine if the truckbed is at most downposition.
+     */
     @Override
     public void startEngine(){
         if(truckBed_pos == 0){
@@ -27,8 +42,10 @@ public class Scania extends CarTransport {
     }
 
 
-
-
+    /**
+     * Lifts the truckbed by the amount degree as long as the the total degrees is no more than 70.
+     * @param degree
+     */
     public void LiftTruckBed(double degree){
         if(degree > 0){
             if(getCurrentSpeed() == 0 && truckBed_pos + degree <= 70){
@@ -44,6 +61,10 @@ public class Scania extends CarTransport {
 
     }
 
+    /**
+     * Lowers the truckbed with amount degree as long as the total degree does not become negative.
+     * @param degree
+     */
     public void LowerTruckBed(double degree){
         if(degree > 0){
             if(getCurrentSpeed() == 0 && truckBed_pos - degree >= 0){
@@ -60,6 +81,10 @@ public class Scania extends CarTransport {
     }
 
 
+    /**
+     * Adds object to storage if there is room.
+     * @param o
+     */
     public void addObject(Object o){
         if(storage.size() < getMaxStorage()){
             storage.add(o);

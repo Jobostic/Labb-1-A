@@ -21,15 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c8ad0443-48cd-4972-9841-3686951bf505" name="Default Changelist" comment="update123">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarTransport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarTransport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Truck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Vehicle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/garage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/garage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarTransport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Truck.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WheelerTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WheelerTruck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/garage.java" afterDir="false" />
     </list>
@@ -86,7 +85,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.garage">
+  <component name="RunManager" selected="JUnit.CarTest.TestAddCar">
     <configuration name="WheelerTruck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="WheelerTruck" />
       <module name="Labb-1-A" />
@@ -94,36 +93,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="garage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="garage" />
-      <module name="Labb-1-A" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="15" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="main" />
-      <module name="Labb-1-A" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarTest.TestAddCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1-A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CarTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="TestAddCar" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CarTest.getNrDoors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarTest.TestLiftTruckBedScania" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labb-1-A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CarTest" />
-      <option name="METHOD_NAME" value="getNrDoors" />
+      <option name="METHOD_NAME" value="TestLiftTruckBedScania" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarTest.TestLoadCars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labb-1-A" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CarTest" />
+      <option name="METHOD_NAME" value="TestLoadCars" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarTest.TestMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labb-1-A" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CarTest" />
+      <option name="METHOD_NAME" value="TestMove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.garage" />
+        <item itemvalue="JUnit.CarTest.TestAddCar" />
+        <item itemvalue="JUnit.CarTest.TestLiftTruckBedScania" />
+        <item itemvalue="JUnit.CarTest.TestLoadCars" />
+        <item itemvalue="JUnit.CarTest.TestMove" />
         <item itemvalue="Application.WheelerTruck" />
-        <item itemvalue="JUnit.CarTest" />
-        <item itemvalue="Application.main" />
-        <item itemvalue="JUnit.CarTest.getNrDoors" />
       </list>
     </recent_temporary>
   </component>
@@ -199,22 +203,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="50" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605598569984" />
-    <state width="1237" height="178" key="GridCell.Tab.0.bottom" timestamp="1605695317445">
+    <state width="1237" height="178" key="GridCell.Tab.0.bottom" timestamp="1605700321667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="178" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605695317445" />
-    <state width="1237" height="178" key="GridCell.Tab.0.center" timestamp="1605695317445">
+    <state width="1237" height="178" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605700321667" />
+    <state width="1237" height="178" key="GridCell.Tab.0.center" timestamp="1605700321667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="178" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605695317445" />
-    <state width="1237" height="178" key="GridCell.Tab.0.left" timestamp="1605695317445">
+    <state width="1237" height="178" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605700321667" />
+    <state width="1237" height="178" key="GridCell.Tab.0.left" timestamp="1605700321667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="178" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605695317445" />
-    <state width="1237" height="178" key="GridCell.Tab.0.right" timestamp="1605695317445">
+    <state width="1237" height="178" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605700321667" />
+    <state width="1237" height="178" key="GridCell.Tab.0.right" timestamp="1605700321667">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="178" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605695317445" />
+    <state width="1237" height="178" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605700321667" />
     <state x="315" y="45" key="NewModule_or_Project.wizard" timestamp="1605598606902">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -239,5 +243,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1605685818104" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605698299781">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605698299781" />
   </component>
 </project>
