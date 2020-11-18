@@ -27,7 +27,7 @@ public class garage {
     }
 
     public void getCar(Car car){
-        
+
     }
 
 }

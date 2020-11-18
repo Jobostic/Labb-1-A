@@ -12,6 +12,14 @@ public class Scania extends Truck {
     }
 
 
+    public void startEngineTruck(){
+        if(truckBed_pos == 0){
+            startEngine();
+        }
+    }
+
+
+
     public void SetLiftTruckBed(double degree){
         if(getCurrentSpeed() == 0 && truckBed_pos + degree <= 70){
             truckBed_pos += degree;
