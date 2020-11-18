@@ -12,6 +12,7 @@ public class Scania extends Truck {
     }
 
 
+<<<<<<< HEAD
     public void startEngineTruck(){
         if(truckBed_pos == 0){
             startEngine();
@@ -19,6 +20,8 @@ public class Scania extends Truck {
     }
 
 
+=======
+>>>>>>> 036682f5eb28dcaa59a873d02cf9bfb2596542da
 
     public void SetLiftTruckBed(double degree){
         if(getCurrentSpeed() == 0 && truckBed_pos + degree <= 70){
@@ -36,7 +39,7 @@ public class Scania extends Truck {
         } else if(getCurrentSpeed() != 0){
             throw new IllegalArgumentException("The car is moving.");
         } else{
-            throw new IllegalArgumentException("The angle has to be lower than 70 degrees");
+            throw new IllegalArgumentException("The angle has to be higher than 0 degrees");
         }
     }
 
@@ -45,5 +48,11 @@ public class Scania extends Truck {
     }
 
 
+    @Override
+    public void startEngine() {
+        if(truckBed_pos == 0){
+            setCurrentSpeed(0.1);
+        }
 
+    }
 }

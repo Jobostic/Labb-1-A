@@ -4,8 +4,13 @@ public abstract class Truck extends Vehicle {
 
 
     public Truck(int nrDoors, Color color, double enginePower, String modelName, double weight){
-        super(nrDoors, color, enginePower, modelName, weight);
+        //super(nrDoors, color, enginePower, modelName, weight);
     }
+
+    @Override
+    public abstract void startEngine();
+
+
 
     //public abstract double getTruckBed_pos();
 
