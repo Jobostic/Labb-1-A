@@ -15,6 +15,7 @@ public abstract class Car extends MyObject implements Movable {
     private double currentSpeed; // The current speed of the car
     private String modelName; // The car model name
     private int direction; // Every Cars direction
+    protected static int n = 0;
 
     /**
      * Constructor of Car. Takes all important variables that are common to both Saab95 and Volvo240
@@ -29,7 +30,8 @@ public abstract class Car extends MyObject implements Movable {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.modelName = modelName;
-        this.direction = NORTH;
+        this.direction = EAST;
+        n += 1;
     }
 
     public Car() {
@@ -136,15 +138,15 @@ public abstract class Car extends MyObject implements Movable {
      * @param amount The argument you send to incrementSpeed()
      */
     public void gas(double amount) {
-        if (getCurrentSpeed() > 0) {
+        //if (getCurrentSpeed() > 0) {
             if (0 <= amount && amount <= 1) {
                 incrementSpeed(amount);
             } else {
                 throw new IllegalArgumentException("Values have to be in interval [0,1]");
             }
-        } else {
-            throw new IllegalArgumentException("Start engine first");
-        }
+       // } else {
+        //    throw new IllegalArgumentException("Start engine first");
+       // }
     }
 
     /**
@@ -156,15 +158,15 @@ public abstract class Car extends MyObject implements Movable {
      * @param amount The argument you send to decrementSpeed()
      */
     public void brake(double amount) {
-        if (getCurrentSpeed() > 0) {
+        //if (getCurrentSpeed() > 0) {
             if (0 <= amount && amount <= 1) {
                 decrementSpeed(amount);
             } else {
                 throw new IllegalArgumentException("Values have to be in interval [0,1]");
             }
-        } else {
+        /*} else {
             throw new IllegalArgumentException("The car is not moving");
-        }
+        }*/
     }
 
     /**
@@ -181,7 +183,7 @@ public abstract class Car extends MyObject implements Movable {
      *
      * @param direction Decides what direction the car will face.
      */
-    private void setDirection(int direction) {
+    public void setDirection(int direction) {
         this.direction = direction;
     }
 
@@ -192,7 +194,7 @@ public abstract class Car extends MyObject implements Movable {
      */
 
     public void move() {
-        if (getCurrentSpeed() > 0) {
+        //if (getCurrentSpeed() > 0) {
             if (getDirection() == NORTH) {
                 setY(getY() + getCurrentSpeed());
             } else if (getDirection() == EAST) {
@@ -202,9 +204,9 @@ public abstract class Car extends MyObject implements Movable {
             } else if (getDirection() == WEST) {
                 setX(getX() - getCurrentSpeed());
             }
-        } else {
+       /* } else {
             throw new IllegalArgumentException("Turn on engine");
-        }
+        }*/
 
     }
 

@@ -31,6 +31,14 @@ public class garage<C extends Car> implements Containable {
      * @param car
      */
 
+    public void addCar(C car){
+        if (storage.size() < maxStorage) {
+            storage.add(car);
+        } else {
+            throw new IllegalArgumentException("We are full.");
+        }
+    }
+
     @Override
     public void addObject(MyObject car) {
         if (storage.size() < maxStorage) {
@@ -96,7 +104,7 @@ public class garage<C extends Car> implements Containable {
 
 
     public static void main(String[] args) {
-        garage<Car> gar = new garage<Car>(10);
+        garage<Volvo240> gar = new garage<Volvo240>(10);
         Volvo240 vol = new Volvo240();
         Saab95 sab = new Saab95();
 
