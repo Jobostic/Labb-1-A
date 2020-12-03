@@ -16,6 +16,7 @@ public abstract class Car extends MyObject implements Movable {
     private String modelName; // The car model name
     private int direction; // Every Cars direction
     protected static int n = 0;
+    private static int x = 1;
 
     /**
      * Constructor of Car. Takes all important variables that are common to both Saab95 and Volvo240
@@ -35,7 +36,6 @@ public abstract class Car extends MyObject implements Movable {
     }
 
     public Car() {
-
     }
 
     /**
@@ -138,15 +138,15 @@ public abstract class Car extends MyObject implements Movable {
      * @param amount The argument you send to incrementSpeed()
      */
     public void gas(double amount) {
-        //if (getCurrentSpeed() > 0) {
+        if (getCurrentSpeed() > 0) {
             if (0 <= amount && amount <= 1) {
                 incrementSpeed(amount);
             } else {
                 throw new IllegalArgumentException("Values have to be in interval [0,1]");
             }
-       // } else {
-        //    throw new IllegalArgumentException("Start engine first");
-       // }
+        } else {
+            throw new IllegalArgumentException("Start engine first");
+        }
     }
 
     /**
@@ -158,15 +158,15 @@ public abstract class Car extends MyObject implements Movable {
      * @param amount The argument you send to decrementSpeed()
      */
     public void brake(double amount) {
-        //if (getCurrentSpeed() > 0) {
+        if (getCurrentSpeed() > 0) {
             if (0 <= amount && amount <= 1) {
                 decrementSpeed(amount);
             } else {
                 throw new IllegalArgumentException("Values have to be in interval [0,1]");
             }
-        /*} else {
+        } else {
             throw new IllegalArgumentException("The car is not moving");
-        }*/
+        }
     }
 
     /**
@@ -241,6 +241,9 @@ public abstract class Car extends MyObject implements Movable {
             setDirection(NORTH);
         }
     }
+
+
+
 
 
 }

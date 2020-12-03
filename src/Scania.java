@@ -4,8 +4,10 @@ public class Scania extends Truck {
     private double truckBed_pos;
 
     public Scania() {
-
+        super(2, Color.black, 150, "Scania", 4, 10);
     }
+
+
 
     /**
      * Constructor: Calls the superclass car to create a vehicle.
@@ -37,6 +39,8 @@ public class Scania extends Truck {
     public void startEngine() {
         if (truckBed_pos == 0) {
             setCurrentSpeed(0.1);
+        } else{
+            throw new IllegalArgumentException("The truck bed is not in default position");
         }
     }
 

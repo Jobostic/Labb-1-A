@@ -4,6 +4,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
@@ -13,14 +14,18 @@ import java.awt.event.ActionListener;
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
-public class CarView extends JFrame {
-    private static final int X = 800;
+public class CarView {
+    private static final int X = 1000;
     private static final int Y = 800;
+    private static final double degrees = 35;
+    //private Car[] allCars = {new Saab95(), new Volvo240(), new Scania()};
 
-    // The controller member
-    CarController carC;
+    JFrame frame = new JFrame();
 
     DrawPanel drawPanel; //= new DrawPanel(X,Y-240);;
+    CarSpeedPanel carSpeedPanel;
+
+    private CarsModel cars;
 
     JPanel controlPanel = new JPanel();
 
@@ -35,14 +40,22 @@ public class CarView extends JFrame {
     JButton turboOffButton = new JButton("Saab Turbo off");
     JButton liftBedButton = new JButton("Scania Lift Bed");
     JButton lowerBedButton = new JButton("Lower Lift Bed");
+    JButton addCarButton = new JButton("Add car");
+    JButton removeCarButton = new JButton("Remove car");
 
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
 
+    JTextField inputCarAdd = new JTextField(10);
+
+    JTextField inputCarRemove = new JTextField(10);
+
+
     // Constructor
-    public CarView(String framename, CarController cc) {
-        this.carC = cc;
-        drawPanel = new DrawPanel(X, Y - 240, carC.cars);
+    public CarView(String framename, CarsModel cars) {
+        drawPanel = new DrawPanel(X, Y - 340, cars);
+        carSpeedPanel = new CarSpeedPanel(X, 100, cars);
+        this.cars = cars;
         initComponents(framename);
 
     }
@@ -50,12 +63,11 @@ public class CarView extends JFrame {
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initComponents(String title) {
+        frame.setTitle(title);
+        frame.setPreferredSize(new Dimension(X, Y));
+        frame.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
-        this.setTitle(title);
-        this.setPreferredSize(new Dimension(X, Y));
-        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-
-        this.add(drawPanel);
+        frame.add(drawPanel);
 
 
         SpinnerModel spinnerModel =
@@ -74,45 +86,83 @@ public class CarView extends JFrame {
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
 
-        this.add(gasPanel);
+        frame.add(gasPanel);
 
         controlPanel.setLayout(new GridLayout(2, 4));
+
+        inputCarAdd.setToolTipText("Car to add");
+        inputCarRemove.setToolTipText("Car to remove");
 
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);
-        controlPanel.add(brakeButton, 3);
-        controlPanel.add(turboOffButton, 4);
-        controlPanel.add(lowerBedButton, 5);
+        controlPanel.add(removeCarButton, 3);
+        controlPanel.add(inputCarRemove, 4);
+        controlPanel.add(brakeButton, 5);
+        controlPanel.add(turboOffButton, 6);
+        controlPanel.add(lowerBedButton, 7);
+        controlPanel.add(addCarButton, 8);
+        controlPanel.add(inputCarAdd, 9);
+
+
         controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
-        this.add(controlPanel);
+        frame.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
 
 
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
         startButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
-        this.add(startButton);
+        frame.add(startButton);
 
 
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
         stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
-        this.add(stopButton);
+        frame.add(stopButton);
+
+        frame.add(carSpeedPanel);
+
 
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
+
+        addCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.addCar(inputCarAdd.getText());
+                drawPanel.repaint();
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+            }
+        });
+
+        removeCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.removeCar(inputCarRemove.getText());
+                drawPanel.repaint();
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+
+            }
+        });
+
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.gas(gasAmount);
+                cars.gas(gasAmount);
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
             }
         });
 
         brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.brake(gasAmount);
+                cars.brake(gasAmount);
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
             }
         });
 
@@ -120,7 +170,9 @@ public class CarView extends JFrame {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.startEngine();
+                cars.startEngine();
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
 
             }
         });
@@ -128,49 +180,51 @@ public class CarView extends JFrame {
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.stopEngine();
+                cars.stopEngine();
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
             }
         });
 
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.setTurboOn();
+                cars.setTurboOn();
             }
         });
 
         turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.setTurboOff();
+                cars.setTurboOff();
             }
         });
 
         liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.liftTrailer(35);
+                cars.liftTrailer(degrees);
             }
         });
 
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.lowerTrailer(35);
+                cars.lowerTrailer(degrees);
             }
         });
 
 
         // Make the frame pack all it's components by respecting the sizes if possible.
-        this.pack();
+        frame.pack();
 
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
-        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        frame.setLocation(dim.width / 2 - frame.getSize().width / 2, dim.height / 2 - frame.getSize().height / 2);
         // Make the frame visible
-        this.setVisible(true);
+        frame.setVisible(true);
         // Make sure the frame exits when "x" is pressed
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }

@@ -20,10 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8ad0443-48cd-4972-9841-3686951bf505" name="Default Changelist" comment="update123">
+      <change afterPath="$PROJECT_DIR$/src/CarFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarSpeedPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarsModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarController$TimerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/DrawPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/garage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WheelerTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WheelerTruck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +87,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/pong" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -78,7 +103,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CarController">
+  <component name="RunManager" selected="Application.CarSimulator">
     <configuration name="CarController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CarController" />
       <module name="Labb-1-A" />
@@ -86,22 +111,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CarSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CarSimulator" />
+      <module name="Labb-1-A" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarSpeedPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CarSpeedPanel" />
+      <module name="Labb-1-A" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DrawPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DrawPanel" />
-      <module name="Labb-1-A" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WheelerTruck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WheelerTruck" />
-      <module name="Labb-1-A" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="garage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="garage" />
       <module name="Labb-1-A" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CarSimulator" />
+        <item itemvalue="Application.CarSpeedPanel" />
         <item itemvalue="Application.CarController" />
         <item itemvalue="Application.DrawPanel" />
         <item itemvalue="JUnit.CarTest" />
-        <item itemvalue="Application.WheelerTruck" />
-        <item itemvalue="Application.garage" />
       </list>
     </recent_temporary>
   </component>
@@ -192,51 +217,51 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="529" y="292" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1606475997887" />
-    <state x="526" y="63" key="FileChooserDialogImpl" timestamp="1606469430266">
+    <state x="526" y="63" key="FileChooserDialogImpl" timestamp="1606853843000">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="421" y="50" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605598569984" />
-    <state x="526" y="63" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1606469430266" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1606486393581">
+    <state x="526" y="63" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1606853843000" />
+    <state width="1557" height="95" key="GridCell.Tab.0.bottom" timestamp="1606921391997">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1606486393581" />
+    <state width="1557" height="95" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1606921391997" />
     <state width="1557" height="274" key="GridCell.Tab.0.bottom/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1606486393580">
+    <state width="1557" height="95" key="GridCell.Tab.0.center" timestamp="1606921391996">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1606486393580" />
+    <state width="1557" height="95" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1606921391996" />
     <state width="1557" height="274" key="GridCell.Tab.0.center/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1606486393580">
+    <state width="1557" height="95" key="GridCell.Tab.0.left" timestamp="1606921391996">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1606486393580" />
+    <state width="1557" height="95" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1606921391996" />
     <state width="1557" height="274" key="GridCell.Tab.0.left/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1606486393580">
+    <state width="1557" height="95" key="GridCell.Tab.0.right" timestamp="1606921391997">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1606486393580" />
+    <state width="1557" height="95" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1606921391997" />
     <state width="1557" height="274" key="GridCell.Tab.0.right/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1606481499624">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1606866612837">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1606481499624" />
-    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1606481499624">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1606866612837" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1606866612837">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1606481499624" />
-    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1606481499624">
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1606866612837" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1606866612837">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1606481499624" />
-    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1606481499624">
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1606866612837" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1606866612837">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1606481499624" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1606866612837" />
     <state x="315" y="45" key="NewModule_or_Project.wizard" timestamp="1605598606902">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -257,14 +282,15 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="412" y="49" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680@0.0.1280.680" timestamp="1605006536950" />
-    <state x="114" y="0" key="new project wizard" timestamp="1605864229104">
+    <state x="114" y="0" key="new project wizard" timestamp="1606894680849">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1605685818104" />
-    <state x="114" y="0" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1605864229104" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605698299781">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="114" y="0" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1606894680849" />
+    <state x="379" y="1" width="840" height="858" key="search.everywhere.popup" timestamp="1606671563095">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605698299781" />
+    <state x="379" y="1" width="840" height="858" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1606671563095" />
   </component>
 </project>

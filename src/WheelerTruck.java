@@ -8,6 +8,10 @@ public class WheelerTruck extends Truck {
     private boolean rampDown = false;
 
 
+    public WheelerTruck(){
+        super(2, Color.blue, 175, "Wheelertruck", 5, 10);
+    }
+
     /**
      * Constructs the motorvehicle of the truck by calling to Car.java. It also creates the storage for the cars.
      *
