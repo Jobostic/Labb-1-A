@@ -20,14 +20,22 @@ public class CarController {
 
     // The frame that represents this instance View of the MVC pattern
     private CarView view;
-    private CarsModel cars;
+    //private CarsModel cars;
+    private garage<Car> cars;
 
 
     public CarController() {
 
     }
 
-    public CarController(CarView view, CarsModel cars) {
+   /*public CarController(CarView view, CarsModel cars) {
+        this.view = view;
+        this.cars = cars;
+
+    }*/
+
+
+    public CarController(CarView view, garage<Car> cars) {
         this.view = view;
         this.cars = cars;
 
@@ -39,7 +47,7 @@ public class CarController {
      * */
 
 
-    private class TimerListener implements ActionListener {
+    /*private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Car car : cars.getCarImages().keySet()) {
                 if (car.getCurrentSpeed() > 0) {
@@ -54,6 +62,37 @@ public class CarController {
                     if (car.getX() < 0) {
                         cars.setBoundAndTurnCar(Car.EAST, car);
                     }
+
+
+                    view.drawPanel.repaint();
+                    view.carSpeedPanel.refresh();
+                    view.carSpeedPanel.revalidate();
+
+                }
+
+
+            }
+        }
+    }
+
+     */
+
+
+    private class TimerListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            for (Car car : cars.getStorage()) {
+                if (car.getCurrentSpeed() > 0) {
+                    car.move();
+                    car.setX(car.getX());
+                    car.setY(car.getY());
+
+                    /*if (car.getX() > view.frame.getHeight()) {
+                        cars.setBoundAndTurnCar(Car.WEST, car);
+                    }
+
+                    if (car.getX() < 0) {
+                        cars.setBoundAndTurnCar(Car.EAST, car);
+                    }*/
 
 
                     view.drawPanel.repaint();

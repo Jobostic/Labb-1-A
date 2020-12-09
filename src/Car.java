@@ -1,10 +1,13 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 /**
  * An abstract class used to gather common attributes of classes Volvo240 and Saab95.
  * Also implements interface Movable which allows the cars you create to move and turn.
  */
-public abstract class Car extends MyObject implements Movable {
+public abstract class Car extends PhysicalObject implements Movable {
 
     public static final int NORTH = 0; //
     public static final int EAST = 1;
@@ -17,7 +20,7 @@ public abstract class Car extends MyObject implements Movable {
     private int direction; // Every Cars direction
     protected static int n = 0;
     private static int x = 1;
-
+    private BufferedImage carImage;
     /**
      * Constructor of Car. Takes all important variables that are common to both Saab95 and Volvo240
      *
@@ -33,6 +36,12 @@ public abstract class Car extends MyObject implements Movable {
         this.modelName = modelName;
         this.direction = EAST;
         n += 1;
+
+        try {
+        carImage= ImageIO.read(CarsModel.class.getResourceAsStream("pics/" + modelName + ".jpg"));
+        } catch (IOException ex) {
+        ex.printStackTrace();
+        }
     }
 
     public Car() {
@@ -43,6 +52,17 @@ public abstract class Car extends MyObject implements Movable {
      *
      * @return
      */
+
+
+    /**
+     * Getter for the image of the car
+     * @return
+     */
+
+    public BufferedImage getCarImage(){
+        return carImage;
+    }
+
     public int getNrDoors() {
         return nrDoors;
     }

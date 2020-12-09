@@ -13,9 +13,12 @@ import java.util.Set;
 public class CarSimulator extends JFrame {
 
     public static void main(String[] args) {
-        CarsModel cars = new CarsModel();
-        cars.addCar("Volvo240");
-        cars.addCar("Saab95");
+        //CarsModel cars = new CarsModel();
+        garage<Car> cars = new garage(10);
+        //cars.addCar("Volvo240");
+        //cars.addCar("Saab95");
+        cars.addCar(new Saab95());
+        cars.addCar(new Volvo240());
         CarView view = new CarView("CarSim 1.0", cars);
         DrawPanel drawPanel = new DrawPanel(1000, 800-340, cars);
         CarSpeedPanel carSpeedPanel = new CarSpeedPanel(100,100, cars);

@@ -76,7 +76,7 @@ public class WheelerTruck extends Truck {
      * @param car
      */
 
-    public void loadCars(MyObject car) {
+    public void loadCars(PhysicalObject car) {
         if (rampDown && measureDist(getX(), car.getX()) <= 1 && measureDist(getY(), car.getY()) <= 1
                 && getStorage().size() <= getMaxStorage() && car.getWeight() <= 3) {
             addObject(car);
@@ -94,7 +94,7 @@ public class WheelerTruck extends Truck {
      */
     public void unloadCar() {
         if (rampDown) {
-            MyObject car = getStorage().pop();
+            PhysicalObject car = getStorage().pop();
             if (getDirection() == NORTH) {
                 car.setY(getY() - 1);
             } else if (getDirection() == EAST) {

@@ -18,14 +18,15 @@ public class CarView {
     private static final int X = 1000;
     private static final int Y = 800;
     private static final double degrees = 35;
-    //private Car[] allCars = {new Saab95(), new Volvo240(), new Scania()};
+
+    private CarFactory carFactory = new CarFactory();
 
     JFrame frame = new JFrame();
 
-    DrawPanel drawPanel; //= new DrawPanel(X,Y-240);;
+    DrawPanel drawPanel;
     CarSpeedPanel carSpeedPanel;
 
-    private CarsModel cars;
+    private garage<Car> cars;
 
     JPanel controlPanel = new JPanel();
 
@@ -52,7 +53,15 @@ public class CarView {
 
 
     // Constructor
-    public CarView(String framename, CarsModel cars) {
+   /* public CarView(String framename, CarsModel cars) {
+        drawPanel = new DrawPanel(X, Y - 340, cars);
+        carSpeedPanel = new CarSpeedPanel(X, 100, cars);
+        this.cars = cars;
+        initComponents(framename);
+
+    }*/
+
+    public CarView(String framename, garage<Car> cars) {
         drawPanel = new DrawPanel(X, Y - 340, cars);
         carSpeedPanel = new CarSpeedPanel(X, 100, cars);
         this.cars = cars;
@@ -130,7 +139,7 @@ public class CarView {
         addCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cars.addCar(inputCarAdd.getText());
+                cars.addCar(carFactory.generateCar(inputCarAdd.getText()));
                 drawPanel.repaint();
                 carSpeedPanel.refresh();
                 carSpeedPanel.revalidate();
@@ -148,7 +157,91 @@ public class CarView {
             }
         });
 
+
         gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(Car car: cars.getStorage()){
+                    car.gas((double)gasAmount/100);
+                }
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+            }
+        });
+
+
+
+        brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(Car car: cars.getStorage()){
+                    car.brake((double ) gasAmount/100);
+                }
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+            }
+        });
+
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(Car car: cars.getStorage()){
+                    car.startEngine();
+                }
+
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+
+            }
+        });
+
+
+
+
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                for(Car car: cars.getStorage()){
+                    car.stopEngine();
+                }
+                carSpeedPanel.refresh();
+                carSpeedPanel.revalidate();
+            }
+        });
+
+        /*turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.setTurboOn();
+            }
+        });
+
+        turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.setTurboOff();
+            }
+        });
+
+        liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.liftTrailer(degrees);
+            }
+        });
+
+        lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.lowerTrailer(degrees);
+            }
+        });
+
+        */
+
+
+        /*gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cars.gas(gasAmount);
@@ -213,7 +306,7 @@ public class CarView {
                 cars.lowerTrailer(degrees);
             }
         });
-
+    */
 
         // Make the frame pack all it's components by respecting the sizes if possible.
         frame.pack();

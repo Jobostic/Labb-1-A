@@ -5,11 +5,11 @@ import java.util.LinkedList;
  * An abstract class for all cars with a loading platform to transport objects
  */
 public abstract class Truck extends Car implements Containable {
-    private LinkedList<MyObject> storage;
+    private LinkedList<PhysicalObject> storage;
     private int maxStorage;
 
     public Truck() {
-        storage = new LinkedList<MyObject>();
+        storage = new LinkedList<PhysicalObject>();
     }
 
 
@@ -26,7 +26,7 @@ public abstract class Truck extends Car implements Containable {
     public Truck(int nrDoors, Color color, double enginePower, String modelName, double weight, int maxStorage) {
         super(nrDoors, color, enginePower, modelName, weight);
         this.maxStorage = maxStorage;
-        storage = new LinkedList<MyObject>();
+        storage = new LinkedList<PhysicalObject>();
 
     }
 
@@ -35,7 +35,7 @@ public abstract class Truck extends Car implements Containable {
      *
      * @return
      */
-    public LinkedList<MyObject> getStorage() {
+    public LinkedList<PhysicalObject> getStorage() {
         return storage;
     }
 
@@ -77,7 +77,7 @@ public abstract class Truck extends Car implements Containable {
     public void move() {
         super.move();
         if (!storage.isEmpty()) {
-            for (MyObject c : storage) {
+            for (PhysicalObject c : storage) {
                 c.setX(super.getX());
                 c.setY(super.getY());
             }
@@ -91,7 +91,7 @@ public abstract class Truck extends Car implements Containable {
      *
      * @param c
      */
-    public void addObject(MyObject c) {
+    public void addObject(PhysicalObject c) {
         storage.add(c);
     }
 
@@ -102,7 +102,7 @@ public abstract class Truck extends Car implements Containable {
      * @param i
      * @return
      */
-    public MyObject getObject(int i) {
+    public PhysicalObject getObject(int i) {
         return storage.get(i);
     }
 
@@ -111,8 +111,8 @@ public abstract class Truck extends Car implements Containable {
      *
      * @param c
      */
-    public MyObject removeObject(MyObject c) {
-        MyObject object = c;
+    public PhysicalObject removeObject(PhysicalObject c) {
+        PhysicalObject object = c;
         storage.remove(c);
         return c;
     }

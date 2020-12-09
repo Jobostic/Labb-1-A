@@ -20,35 +20,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8ad0443-48cd-4972-9841-3686951bf505" name="Default Changelist" comment="update123">
-      <change afterPath="$PROJECT_DIR$/src/CarFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarSimulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarSpeedPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Car.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarController$TimerListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarSimulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarSpeedPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarSpeedPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$11.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView$9.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/CarsModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/CarsModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Containable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Containable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/MyObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/Truck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/WheelerTruck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Labb-1-A/garage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labb-1-A/garage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarSpeedPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarSpeedPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarsModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysicalObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WheelerTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WheelerTruck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/garage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/garage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +99,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/pong" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/New folder" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -195,10 +207,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1605003295453" />
-    <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser" timestamp="1605822750375">
+    <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser" timestamp="1607519863030">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1605817466353" />
+    <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1607519863030" />
     <state x="558" y="59" key="#com.intellij.ide.util.MemberChooser/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605822750375" />
     <state x="424" y="206" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605003078446">
       <screen x="0" y="0" width="1280" height="680" />
@@ -217,34 +230,34 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="529" y="292" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1606475997887" />
-    <state x="526" y="63" key="FileChooserDialogImpl" timestamp="1606853843000">
+    <state x="526" y="63" key="FileChooserDialogImpl" timestamp="1607265673966">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="421" y="50" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605598569984" />
-    <state x="526" y="63" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1606853843000" />
-    <state width="1557" height="95" key="GridCell.Tab.0.bottom" timestamp="1606921391997">
+    <state x="526" y="63" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1607265673966" />
+    <state width="1557" height="206" key="GridCell.Tab.0.bottom" timestamp="1607523067876">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="95" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1606921391997" />
+    <state width="1557" height="206" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1607523067876" />
     <state width="1557" height="274" key="GridCell.Tab.0.bottom/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="95" key="GridCell.Tab.0.center" timestamp="1606921391996">
+    <state width="1557" height="206" key="GridCell.Tab.0.center" timestamp="1607523067876">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="95" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1606921391996" />
+    <state width="1557" height="206" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1607523067876" />
     <state width="1557" height="274" key="GridCell.Tab.0.center/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="95" key="GridCell.Tab.0.left" timestamp="1606921391996">
+    <state width="1557" height="206" key="GridCell.Tab.0.left" timestamp="1607523067876">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="95" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1606921391996" />
+    <state width="1557" height="206" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1607523067876" />
     <state width="1557" height="274" key="GridCell.Tab.0.left/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
-    <state width="1557" height="95" key="GridCell.Tab.0.right" timestamp="1606921391997">
+    <state width="1557" height="206" key="GridCell.Tab.0.right" timestamp="1607523067876">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605820435818" />
-    <state width="1557" height="95" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1606921391997" />
+    <state width="1557" height="206" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1607523067876" />
     <state width="1557" height="274" key="GridCell.Tab.0.right/1600.511.1280.693/0.0.1600.860@0.0.1600.860" timestamp="1605823538563" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1606866612837">
       <screen x="0" y="0" width="1600" height="860" />
@@ -287,6 +300,10 @@
     </state>
     <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1605685818104" />
     <state x="114" y="0" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1606894680849" />
+    <state x="441" y="156" width="700" height="530" key="recent.locations.popup" timestamp="1607524944570">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="441" y="156" width="700" height="530" key="recent.locations.popup/0.0.1600.860@0.0.1600.860" timestamp="1607524944570" />
     <state x="379" y="1" width="840" height="858" key="search.everywhere.popup" timestamp="1606671563095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -3,13 +3,14 @@ import java.awt.*;
 /**
  * MyObject is a class for all objects. The objects have a position in x,y coordinate, weight and a color.
  */
-public class MyObject {
+public class PhysicalObject {
     private double posX; // Every Cars position in x-direction
     private double posY; // Every Cars position in y-direction
     private double weight; //in ton
     private Color color; // Color of the object
 
-    public MyObject() {
+
+    public PhysicalObject() {
 
     }
 
@@ -19,7 +20,7 @@ public class MyObject {
      * @param color
      * @param weight
      */
-    public MyObject(Color color, double weight) {
+    public PhysicalObject(Color color, double weight) {
         this.posX = 0;
         this.posY = 0;
         this.color = color;

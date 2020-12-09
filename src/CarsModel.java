@@ -2,8 +2,10 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.concurrent.ConcurrentMap;
 
 public class CarsModel {
 

@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -5,16 +6,18 @@ import java.util.List;
  */
 public interface Containable {
 
-    public List<MyObject> getStorage();
+
+
+    public List<PhysicalObject> getStorage();
 
     public int getMaxStorage();
 
     public void setMaxStorage(int maxStorage);
 
-    public void addObject(MyObject c);
+    public void addObject(PhysicalObject c);
 
-    public MyObject getObject(int i);
+    public PhysicalObject getObject(int i);
 
-    public MyObject removeObject(MyObject c);
+    public PhysicalObject removeObject(PhysicalObject c);
 
 }
