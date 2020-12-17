@@ -10,6 +10,7 @@ public class Saab95 extends Car {
      */
     private boolean turboOn;
 
+
     /**
      * The constructor of Saab95.
      * This constructor inherits the constructor of the superclass with appropriate arguments of a Saab95.
@@ -19,6 +20,7 @@ public class Saab95 extends Car {
         super(2, Color.red, 100, "Saab95", 2);
         turboOn = false;
     }
+
 
     /**
      * Method to turn on the turbo.

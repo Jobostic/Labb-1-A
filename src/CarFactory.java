@@ -5,12 +5,11 @@ import java.util.Random;
  * This class is a Factory class that creates car.
  * It can create Saab95, Scania and Volvo240.
  */
-public class CarFactory {
+public class CarFactory implements AbstractCarFactory {
 
     public CarFactory() {
 
     }
-
 
     /**
      * Generates car by taking in a string. If the string is "" then
@@ -18,13 +17,12 @@ public class CarFactory {
      * name Scania, Volvo240 or Saab95 then it returns an object of
      * that car.
      *
-     * @param carWord
+     * @param //carWord
      * @return
      */
     public Car generateCar(String carWord) {
         Random rand = new Random();
         int i = rand.nextInt(3);
-
 
         if (carWord.equals("Saab95")) {
             return new Saab95();
@@ -41,6 +39,8 @@ public class CarFactory {
         }
 
     }
+
+
 }
 
 

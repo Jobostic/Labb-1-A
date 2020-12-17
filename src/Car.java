@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An abstract class used to gather common attributes of classes Volvo240 and Saab95.
@@ -6,7 +8,7 @@ import java.awt.*;
  */
 public abstract class Car extends MyObject implements Movable {
 
-    public static final int NORTH = 0; //
+    public static final int NORTH = 0;
     public static final int EAST = 1;
     public static final int SOUTH = 2;
     public static final int WEST = 3;
@@ -36,6 +38,7 @@ public abstract class Car extends MyObject implements Movable {
 
     public Car() {
     }
+
 
     /**
      * Getter for nrDoors.

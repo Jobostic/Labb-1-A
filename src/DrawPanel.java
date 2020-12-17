@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
 import javax.swing.*;
 
 /**
@@ -10,6 +12,7 @@ public class DrawPanel extends JPanel {
 
 
     private CarModel cars;
+    private HashMap<String, BufferedImage> carImages;
 
 
     /**
@@ -19,8 +22,8 @@ public class DrawPanel extends JPanel {
      * @param y
      * @param cars
      */
-    public DrawPanel(int x, int y, CarModel cars) {
-        //carImages = new HashMap<Car, BufferedImage>();
+    public DrawPanel(int x, int y, CarModel cars, HashMap carImages) {
+        this.carImages = carImages;
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
@@ -40,7 +43,7 @@ public class DrawPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         for (Car car : cars.getCars()) {
-            g.drawImage(cars.getCarImages().get(car.getName()), (int) car.getX(), (int) car.getY(), null);
+            g.drawImage(carImages.get(car.getName()), (int) car.getX(), (int) car.getY(), null);
         }
 
     }

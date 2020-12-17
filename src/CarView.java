@@ -1,9 +1,11 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
@@ -15,9 +17,8 @@ import java.awt.event.ActionListener;
 public class CarView {
     private static final int X = 1000;
     private static final int Y = 800;
-
-
-
+    CarFactory carFactory = new CarFactory();  //checka denna
+    private HashMap<String, BufferedImage> carImages;
     JFrame frame = new JFrame();
 
     DrawPanel drawPanel;
@@ -58,9 +59,13 @@ public class CarView {
      */
     public CarView(String framename, CarModel cars) {
         this.framename = framename;
-        drawPanel = new DrawPanel(X, Y - 340, cars);
-        carSpeedPanel = new CarSpeedPanel(X, 100, cars);
         this.cars = cars;
+        carImages = new HashMap<String, BufferedImage>();
+        addExistingCars();
+        drawPanel = new DrawPanel(X, Y - 340, cars, carImages);
+        carSpeedPanel = new CarSpeedPanel(X, 100, cars);
+
+
         initComponents(framename);
 
     }
@@ -136,144 +141,6 @@ public class CarView {
 
 
         /**
-         * Actionlistener for button that adds a car. It takes in a string.
-         * If the string is "" then a random car gets generated in CarFactory.
-         * If the string is equal to one of the modelname of the existing cars
-         * then it creates an object of that car in CarFactory.
-         */
-
-        addCarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.addCar(inputCarAdd.getText());
-                drawPanel.repaint();
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-
-            }
-        });
-
-        /**
-         * ActionListener for button that removes a car.
-         */
-        removeCarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.removeCar(inputCarRemove.getText());
-                drawPanel.repaint();
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-
-            }
-        });
-
-
-        /**
-         * ActionListener for the gas button.
-         */
-        gasButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.gas(gasAmount);
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-
-            }
-        });
-
-        /**
-         * ActionListener for the brake button.
-         *
-         */
-        brakeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.brake(gasAmount);
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-            }
-        });
-
-        /**
-         * ActionListener for the start button.
-         */
-
-        startButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.startEngine();
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-
-            }
-        });
-
-        /**
-         * ActionListener for the stop button.
-         */
-        stopButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.stopEngine();
-                carSpeedPanel.refresh();
-                carSpeedPanel.revalidate();
-                carSpeedPanel.repaint();
-
-            }
-        });
-
-        /**
-         * ActionListener for turbo ON button.
-         */
-        turboOnButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.setTurboOn();
-            }
-        });
-
-        /**
-         * ActionListener for the turbo OFF button.
-         */
-        turboOffButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.setTurboOff();
-            }
-        });
-
-        /**
-         * ActionListener for the button that lifts the truck bed.
-         */
-        liftBedButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.liftTrailer();
-            }
-        });
-
-        /**
-         * ActionListener for the button that lowers the truck bed.
-         */
-        lowerBedButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cars.lowerTrailer();
-            }
-        });
-
-
-        /**
          * Make the frame pack all it's components by respecting the sizes if possible.
          */
         frame.pack();
@@ -295,4 +162,45 @@ public class CarView {
          */
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+
+    /**
+     * Helper method if user initializes cars before starting up the program
+     */
+    public void addExistingCars() {
+        for (Car c : cars.getCars()) {
+            addImage(c);
+        }
+    }
+
+
+    /**
+     * Returns a HashMap of the car images.
+     *
+     * @return
+     */
+    public HashMap<String, BufferedImage> getCarImages() {
+        return carImages;
+    }
+
+
+    /**
+     * Adds the picture that corresponds to the model name of the car in CarImages, given that
+     * it does not contain it already.
+     *
+     * @param newCar
+     */
+    public void addImage(Car newCar) {
+        if (!carImages.containsKey(newCar.getName())) {
+            try {
+                BufferedImage image = ImageIO.read(CarModel.class.getResourceAsStream("pics/" + newCar.getName() + ".jpg"));
+                carImages.put(newCar.getName(), image);
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+
 }

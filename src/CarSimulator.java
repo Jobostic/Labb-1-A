@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 
 /**
  * This class is the application/simulator of the car and where the program is run.
@@ -12,15 +10,18 @@ public class CarSimulator {
         /**
          * Can add cars before opening program if needed.
          */
-        //cars.addCar("Volvo240");
-        //cars.addCar("Saab95");
+        cars.addCar(new Volvo240());
+        cars.addCar(new Saab95());
+        cars.addCar(new Scania());
 
+        CarLogger logger = new CarLogger();
+        cars.addCarObserver(logger);
         CarView view = new CarView("CarSim 1.0", cars);
 
         CarController cc = new CarController(view, cars);
 
-        cc.getTimer().start();
 
+        cars.getTimer().start();
     }
 
 

@@ -1,8 +1,8 @@
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+import javax.swing.*;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+
 
 /**
  * This class represents the Model part in the MVC pattern.
@@ -14,12 +14,14 @@ public class CarModel {
     private final int maxStorage = 10;
     private static final double degrees = 35;
     private ArrayList<Car> cars;
-    private CarFactory carFactory = new CarFactory();
-    private HashMap<String, BufferedImage> carImages;
     private final static int DIST_BETWEEN_PICS = 100;
     private final int nbrOfCol = 2;
     private final int nbrOfRows = maxStorage / nbrOfCol;
     private Car[][] carPosition;
+    private List<CarObserver> observers = new ArrayList<>();
+
+    private final int delay = 50;
+    private Timer timer = new Timer(0, null);
 
 
     /**
@@ -27,21 +29,51 @@ public class CarModel {
      * that stores the position of the car on the drawPanel.
      */
     public CarModel() {
-        carImages = new HashMap<String, BufferedImage>();
         cars = new ArrayList<Car>();
         carPosition = new Car[nbrOfRows][nbrOfCol];
+        timer.setDelay(50);
+
+    }
+
+    /**
+     * Adds an actionListener to timer
+     *
+     * @param action
+     */
+    public void addListenerTimer(ActionListener action) {
+        timer.addActionListener(action);
+    }
+
+    /**
+     * Returns the timer
+     *
+     * @return
+     */
+    public Timer getTimer() {
+        return timer;
     }
 
 
     /**
-     * Returns a HashMap of the car images.
+     * Adds a CarObserver to List of observers.
      *
-     * @return
+     * @param observer
      */
-    public HashMap<String, BufferedImage> getCarImages() {
-        return carImages;
+    public void addCarObserver(final CarObserver observer) {
+        this.observers.add(observer);
     }
 
+    /**
+     * Notifies that all the cars has turned.
+     */
+    private void notifyObservers() {
+        for (final CarObserver observer : this.observers) {
+            for (Car car : cars) {
+                observer.carHasTurned(car);
+            }
+
+        }
+    }
 
     /**
      * Returns a list of cars.
@@ -54,37 +86,18 @@ public class CarModel {
 
 
     /**
-     * Adds the picture that corresponds to the model name of the car in CarImages, given that
-     * it does not contain it already.
-     *
-     * @param newCar
-     */
-    public void addImage(Car newCar) {
-        if (!carImages.containsKey(newCar.getName())) {
-            try {
-                BufferedImage image = ImageIO.read(CarModel.class.getResourceAsStream("pics/" + newCar.getName() + ".jpg"));
-                carImages.put(newCar.getName(), image);
-
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-
-    /**
      * Adds car to the arraylist. It takes in a string of the model name and checks
      * first if there is room. If there is, it generates a car, adds it to the
      * arraylist, sets the position of the car and lastly adds it picture.
      *
-     * @param carText
+     * @param car
      */
-    public void addCar(String carText) {
+    public void addCar(Car car) {
 
         if (cars.size() < maxStorage) {
-            Car newCar = carFactory.generateCar(carText);
-            cars.add(newCar);
-            setCarPosition(newCar);
-            addImage(newCar);
+            cars.add(car);
+            setCarPosition(car);
+
         } else {
             throw new IllegalArgumentException("There is no more room.");
         }
@@ -161,11 +174,12 @@ public class CarModel {
      * @param direction
      * @param car
      */
-    public void setBoundAndTurnCar(int direction, Car car) {
+    public void setBoundAndTurnCar(int direction, Car car, double currentSpeed) {
         car.stopEngine();
         car.setDirection(direction);
+        notifyObservers();
         car.startEngine();
-
+        car.setCurrentSpeed(currentSpeed);
     }
 
 
@@ -260,13 +274,12 @@ public class CarModel {
      * Returns the degrees that the trailer gets lowered/lifted by.
      */
 
-    public double getDegrees(){
+    public double getDegrees() {
         return degrees;
     }
 
     /**
      * Lifts the trailer by degrees on all Scanias.
-     *
      */
     public void liftTrailer() {
         for (Car car : cars) {
@@ -279,7 +292,6 @@ public class CarModel {
 
     /**
      * Lowers the trailer by degrees on all Scanias.
-     *
      */
     public void lowerTrailer() {
         for (Car car : cars) {

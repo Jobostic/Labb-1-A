@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,20 +8,6 @@ import java.awt.event.ActionListener;
  */
 
 public class CarController {
-    // member fields:
-
-    /**
-     * The delay (ms) corresponds to 20 updates a sec (hz)
-     */
-
-    private final int delay = 50;
-    /**
-     * The timer is started with an listener (see below) that executes the statements
-     * each step between delays.
-     */
-    private Timer timer = new Timer(delay, new TimerListener());
-
-
     private CarView view;
     private CarModel cars;
 
@@ -37,6 +22,8 @@ public class CarController {
     public CarController(CarView view, CarModel cars) {
         this.view = view;
         this.cars = cars;
+        actions();
+        cars.addListenerTimer(new TimerListener());
 
     }
 
@@ -57,12 +44,13 @@ public class CarController {
                     car.setX(car.getX());
                     car.setY(car.getY());
 
-                    if (car.getX() > view.frame.getHeight()) {
-                        cars.setBoundAndTurnCar(Car.WEST, car);
+
+                    if (car.getX() > view.drawPanel.getWidth() - view.getCarImages().get(car.getName()).getWidth()) {
+                        cars.setBoundAndTurnCar(Car.WEST, car, car.getCurrentSpeed());
                     }
 
                     if (car.getX() < 0) {
-                        cars.setBoundAndTurnCar(Car.EAST, car);
+                        cars.setBoundAndTurnCar(Car.EAST, car, car.getCurrentSpeed());
                     }
 
 
@@ -76,11 +64,156 @@ public class CarController {
 
             }
         }
+
+
     }
 
-    public Timer getTimer() {
-        return timer;
-    }
 
+    /**
+     * Method for all the actionListener
+     * when pressing different buttons on the panel.
+     */
+    public void actions() {
+        /**
+         * Actionlistener for button that adds a car. It takes in a string.
+         * If the string is "" then a random car gets generated in CarFactory.
+         * If the string is equal to one of the modelname of the existing cars
+         * then it creates an object of that car in CarFactory.
+         */
+
+
+        view.addCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Car newCar = view.carFactory.generateCar(view.inputCarAdd.getText());
+                //Car newCar = carFactory.generateCar(new Saab95());
+                cars.addCar(newCar);
+                view.addImage(newCar);
+                view.drawPanel.repaint();
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+
+            }
+        });
+
+        /**
+         * ActionListener for button that removes a car.
+         */
+        view.removeCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.removeCar(view.inputCarRemove.getText());
+                view.drawPanel.repaint();
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+
+            }
+        });
+
+
+        /**
+         * ActionListener for the gas button.
+         */
+        view.gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.gas(view.gasAmount);
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+
+            }
+        });
+
+        /**
+         * ActionListener for the brake button.
+         *
+         */
+        view.brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.brake(view.gasAmount);
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+            }
+        });
+
+        /**
+         * ActionListener for the start button.
+         */
+
+        view.startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.startEngine();
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+
+            }
+        });
+
+        /**
+         * ActionListener for the stop button.
+         */
+        view.stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.stopEngine();
+                view.carSpeedPanel.refresh();
+                view.carSpeedPanel.revalidate();
+                view.carSpeedPanel.repaint();
+
+            }
+        });
+
+        /**
+         * ActionListener for turbo ON button.
+         */
+        view.turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.setTurboOn();
+            }
+        });
+
+        /**
+         * ActionListener for the turbo OFF button.
+         */
+        view.turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.setTurboOff();
+            }
+        });
+
+        /**
+         * ActionListener for the button that lifts the truck bed.
+         */
+        view.liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.liftTrailer();
+            }
+        });
+
+        /**
+         * ActionListener for the button that lowers the truck bed.
+         */
+        view.lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cars.lowerTrailer();
+            }
+        });
+    }
 
 }
